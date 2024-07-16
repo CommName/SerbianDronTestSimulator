@@ -1,0 +1,3 @@
+[submodule "MultipleChoiceTestSimulator"]
+	path = MultipleChoiceTestSimulator
+	url = git@github.com:CommName/MultipleChoiceTestSimulator.git
