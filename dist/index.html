@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <link rel="modulepreload" href="./MultipleChoiceTestSimulatorLib.js" crossorigin=anonymous>
+    <link rel="preload" href="./MultipleChoiceTestSimulatorLib_bg.wasm" crossorigin=anonymous as="fetch" type="application/wasm"></head>
+  </head>
+  <body>
+    
+    <!-- The WASM code will resize the canvas dynamically -->
+    <!-- the id is hardcoded in main.rs . so, make sure both match. -->
+    <div style="margin: 5%; height: 5%; width: 80%; text-align: center;">
+      <h1> Simulator ispita za dronove </h1>
+    </div>
+    <div style=" position: absolute; top: 5%; height: 80%; width: 80%; margin: 5%;">
+      <canvas id="quiz_app"></canvas>
+    </div>
+      
+    <script type="module">
+      import init, * as bindings from './MultipleChoiceTestSimulatorLib.js';
+      const wasm = await init('./MultipleChoiceTestSimulatorLib_bg.wasm');
+      bindings.start_quiz("quiz_app", window.location.href + "ispit_za_dronove.json", true);
+    </script>
+  </body>
+</html>
