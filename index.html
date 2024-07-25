@@ -1,7 +1,7 @@
 <html>
   <head>
-    <link rel="modulepreload" href="./MultipleChoiceTestSimulatorLib.js" crossorigin=anonymous>
-    <link rel="preload" href="./MultipleChoiceTestSimulatorLib_bg.wasm" crossorigin=anonymous as="fetch" type="application/wasm"></head>
+    <link rel="modulepreload" href="./dist/MultipleChoiceTestSimulatorLib.js" crossorigin=anonymous>
+    <link rel="preload" href="./dist/MultipleChoiceTestSimulatorLib_bg.wasm" crossorigin=anonymous as="fetch" type="application/wasm"></head>
   </head>
   <body>
     
@@ -15,8 +15,8 @@
     </div>
       
     <script type="module">
-      import init, * as bindings from './MultipleChoiceTestSimulatorLib.js';
-      const wasm = await init('./MultipleChoiceTestSimulatorLib_bg.wasm');
+      import init, * as bindings from './dist/MultipleChoiceTestSimulatorLib.js';
+      const wasm = await init('./dist/MultipleChoiceTestSimulatorLib_bg.wasm');
       bindings.start_quiz("quiz_app", window.location.href + "ispit_za_dronove.json", true);
     </script>
   </body>
