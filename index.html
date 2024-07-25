@@ -17,7 +17,8 @@
     <script type="module">
       import init, * as bindings from './dist/MultipleChoiceTestSimulatorLib.js';
       const wasm = await init('./dist/MultipleChoiceTestSimulatorLib_bg.wasm');
-      bindings.start_quiz("quiz_app", window.location.href + "ispit_za_dronove.json", true);
+      const quiz_url = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/ispit_za_dronove.json";
+      bindings.start_quiz("quiz_app", quiz_url, true);
     </script>
   </body>
 </html>
